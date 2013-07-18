@@ -74,7 +74,7 @@ class reqs {
   	ensure      => present,
   	mode        => 'wsgi',
   	dir         => '/home/ubuntu/code/flask-hello-world',
-  	bind        => 'localhost:10000',
+  	bind        => '0.0.0.0:8080',
    }
 }
 
