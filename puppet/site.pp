@@ -1,6 +1,6 @@
 Exec { path => "/bin:/sbin:/usr/bin:/usr/sbin" }
 
-class git::clone ($github_user='niedbalski', $repo, $username='ubuntu') {
+class git::clone ($github_user='niedbalski', $repo, $username='app') {
 
     $group = $username
 
@@ -70,7 +70,7 @@ class reqs {
  
    pip::install { "flask": }
 
-   python::gunicorn { 'localhost':
+   python::gunicorn { '0.0.0.0':
   	ensure      => present,
   	mode        => 'wsgi',
   	dir         => '/home/ubuntu/code/flask-hello-world',
